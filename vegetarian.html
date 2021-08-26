@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+	<h1>
+		<li id="root"></li>
+	</h1>
+</body>
+<script>
+	const dish = [
+		{
+			name: 'butter chicken',
+			veg: false
+		},
+		{
+			name: 'malai kofta',
+			veg: true
+		},
+		{
+			name: 'matar paneer',
+			veg: true
+		},
+		{
+			name: 'chicken tikka',
+			veg: false
+		},
+	]
+
+	menuNode = document.querySelector("#root")
+	const veg = dish.filter( option => option.veg === true)
+	console.log(veg)
+
+	veg.forEach( option => {
+		let item = option.name
+		let li = document.createElement("li")
+		li.textContent = item
+		menuNode.append(li)
+
+	})
+</script>
+</html>
